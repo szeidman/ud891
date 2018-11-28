@@ -62,7 +62,7 @@ function openModal(e) {
       closeModal();
     }
   }
-
+  document.querySelector('.wrapper').setAttribute('aria-hidden', true);
   // FIXME: hide non-modal content from screen readers
 }
 
@@ -75,4 +75,6 @@ function closeModal() {
   focusedElementBeforeModal.focus();
 
   // FIXME: don't forget to make main content screen reader accessible again.
+  document.querySelector('.wrapper').removeAttribute('aria-hidden');
+
 }
